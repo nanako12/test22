@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+<h1 align="center">jQuery를 이용한 Ajax 테스트</h1>
+
+<h2>1. 버튼 클릭시 서버에게 값 전송 </h2>
+이름 : <input type="text" id="myName" />
+<button  onclick="test1();">클릭</button>
+
+<script>
+	function test1(){
+		var myName = $('myName').val();
+		
+		$.ajax({
+			url : "/test1_1",
+			data : {name:myname},
+			type : "get",
+			success : function(){
+				console.log("성공!");
+			},
+			error : function(){
+				console.log("실패")
+			}
+			
+		});
+		
+		
+	}
+</script>
+
+<br>
+<hr>
+
+
+
+
+
+
+</body>
+</html>
